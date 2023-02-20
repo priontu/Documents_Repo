@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0041)https://accounts.drexel.edu/aswFinish.asp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<link href="./Account Creation and Delivery_files/main.css" rel="stylesheet" type="text/css">
+<link href="./Account Creation and Delivery_files/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
+<script src="./Account Creation and Delivery_files/jquery.js.download" type="text/javascript"></script>
+<script src="./Account Creation and Delivery_files/jquery-ui-1.9.2.all.min.js.download" type="text/javascript"></script>
+<script src="./Account Creation and Delivery_files/knockout-2.2.0.js.download" type="text/javascript"></script>
+<script type="text/javascript" src="./Account Creation and Delivery_files/passwordPolicy.js.download"></script>
+
+<script type="text/javascript">
+    $(function () {
+        // Dynamically set max password length based on Password policies
+        $("input:password").attr('maxlength', passwordPolicy.MaxLength);
+        $("input.password").attr('maxlength', passwordPolicy.MaxLength).attr('size', passwordPolicy.MaxLength - 10);
+
+        // Dynamically set password policy descriptions
+        $("span.password-policy-minlength").html(passwordPolicy.MinLength);
+        $("span.password-policy-maxlength").html(passwordPolicy.MaxLength);
+    });
+</script>
+
+    <title>Account Creation and Delivery</title>
+    <script type="text/javascript">
+        $(function () {
+            $.get('aswFinishWork.asp?ts=' + $.now(), function (data) {
+                var input = $('<div/>').html(data).find('#redirectUrl');
+                if (input.length > 0) {
+                    window.location = input.val();
+                }
+                else {
+                    $('#divAJAXResult').html(data);
+                }
+            }).fail(function (jqXHR, textStatus) {
+                $('#divAJAXResult').html("Request failed: " + textStatus);
+            });
+
+            //$('#divAJAXResult').load('aswFinishWork.asp');
+        });
+    </script>
+</head>
+<body bgcolor="white" topmargin="3" leftmargin="3" marginheight="3" marginwidth="3">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2">
+        <tbody><tr>
+            <td valign="top">
+                <img src="./Account Creation and Delivery_files/logo.png" width="75px">
+            </td>
+            <td valign="top">
+                <font size="+2" face="Trebuchet MS,Arial,Geneva,Helvetica">Computer Accounts Management
+                    Service</font>
+                <br>
+                <font size="+1" face="Trebuchet MS,Arial,Geneva,Helvetica">Account Setup Wizard
+                    <br>
+                </font><font size="+1" face="Trebuchet MS,Arial,Geneva,Helvetica" color="#990000">Step
+                    5: Account Creation and Delivery to Client</font><p></p>
+            </td>
+        </tr>
+    </tbody></table>
+    <p>
+        We are creating your accounts right now. It may take up to one minute to create
+        each account. Please be patient.
+    </p>
+    <div id="divAJAXResult">
+
+<!-- 'passwordPolicy.js' is also included as a client-side javascript in '/includes/PageHead.asp' -->
+
+<hr>
+
+
+  <hr>
+  
+        <br> Your main Drexel account is <b>*USERID*@drexel.edu</b>.  For students and employees this is also your Office 365 login.   <br><br> 
+Your official email alias, <b>Priontu.Chowdhury@drexel.edu</b>, points to the same mailbox, and is the version of your address that appears in the University directory and on official University mailing lists.
+<p>
+</p><p>Your <b>Main Drexel Account</b> has been created for you.  Your account name (also called a user-id) is
+<font face="verdana,monaco,courier new,courier" color="#333399"><b>pc833</b></font>
+and the account password is
+<font face="verdana,monaco,courier new,courier" color="#333399"><b>DevilMayCry21</b></font>
+</p>
+<p>You'll use your main Drexel account to sign into DrexelOne and other services.
+Go to DrexelOne to keep up on campus news, register for classes, pay your bills,
+take online courses, check your grades and more.
+Check it out, at <a href="http://one.drexel.edu/">one.drexel.edu</a>.
+</p>
+
+<p> All Drexel students and most Drexel employees will also have access to  <a href="http://portal.office.com/">Office 365</a> (where you can access your Drexel email and download Office apps).  If you are picking up your first accounts, you'll sign in with this form of your email address <b>pc833@drexel.edu</b> and the password above.
+</p>
+
+<p>
+It may take up to 45 minutes for your new Office 365 service to be activated.
+</p>
+
+
+
+  <hr>
+  <p>A <b>Drexel Legacy</b> account  has been set up for you.  Your account user-id is <font face="verdana,monaco,courier new,courier" color="#333399"><b>pc833</b></font>
+  and its password is <font face="verdana,monaco,courier new,courier" color="#333399"><b>DevilMayCry21</b></font>
+ </p>
+
+<p>You might use this account to sign in to certain older systems.</p>
+
+  <hr>
+  <p> The following <b>University ID Number</b> has been assigned to you: <font face="verdana,monaco,courier new,courier" color="#333399"><b>14601785</b></font> . You may need to know this 8-digit number to identify yourself to various administrative
+systems on campus.
+</p><hr><hr>
+
+	<p>New account creation is now complete.  If you have not written down the account
+	names and passwords shown above, please do so now; otherwise you won't be able to
+	access your own accounts.</p>
+	
+  <p>As a safety precaution, we've logged you out so that others can't access your
+  accounts.  Enjoy using your new accounts.</p>
+  </div>
+
+
+</body></html>
